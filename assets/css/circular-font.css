@@ -261,3 +261,10 @@ body {
 .playerSection #volume {
   background-image: linear-gradient(to right, #ffffff 30%, #808080 30%);
 }
+
+
+#testo-schedeBuonasera p {
+  margin-bottom: 0;
+  font-size: 8px;
+  margin-left: 10px;
+}
