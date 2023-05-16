@@ -162,7 +162,6 @@ body {
   font-size: 8px;
 }
 
-
 @media screen and (max-width: 765px) {
   .playerSection {
     height: 80px;
@@ -220,18 +219,15 @@ body {
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  
 }
 #playerIcons * {
-  margin-left: 10px;
+  margin-left: 1px;
   border-style: none;
   background: none;
 }
 
-
 #playbutton {
   font-size: 2em;
-  
 }
 
 .playerSection input[type="range"] {
