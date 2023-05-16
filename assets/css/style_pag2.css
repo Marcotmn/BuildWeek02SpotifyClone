@@ -553,6 +553,7 @@ body {
   border-radius: 5px;
   position: relative;
   border: none;
+  -webkit-appearance: var(--spotify-green);
 }
 
 .footer-player-middle-slider {
