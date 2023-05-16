@@ -12,12 +12,12 @@
 <body>
     <div class="container">
         <div class="left">
-            <div style="height:20px"></div>
+
             <div class="menu">
                 <ul>
                     <li>
-                        <img src="./assets/css/images/ThreeDots.svg" alt="">
-                            <span></span>
+                        <img src="./assets/css/images/ThreeDots.svg" alt="" style="width: 2em;">
+                        <span></span>
                         </a>
                     </li>
                     <li>
@@ -39,23 +39,23 @@
                         </a>
                     </li>
                     <div style="height:30px"></div>
-                    <li>
-                        <a href="#">
-                            <img src="./assets/css/images/plus-small-svgrepo-com.svg" alt="" class="gray-filtered">
-                            <span>Crea Playlist</span>
-                        </a>
+                    <li id="personalized-icons">
+                        <i class="bi bi-plus"></i>
+                        &nbsp;
+                        &nbsp;
+                        <span class="gray-filtered">Crea Playlist</span>
                     </li>
-                    <li>
-                        <a href="#">
-                            <img src="./assets/css/images/heart-svgrepo-com.svg" alt="" class="gray-filtered">
-                            <span>Brani che ti piacciono</span>
-                        </a>
+                    <li id="personalized-icons">
+                        <i class="bi bi-suit-heart-fill"></i>
+                        &nbsp;
+                        &nbsp;
+                        <span class="gray-filtered">Brani che ti piacciono</span>
                     </li>
-                    <li>
-                        <a href="#">
-                            <img src="./assets/css/images/bookmark-svgrepo-com.svg" alt="" class="gray-filtered">
-                            <span>I tuoi episodi</span>
-                        </a>
+                    <li id="personalized-icons">
+                        <i class="bi bi-bookmark-fill"></i>
+                        &nbsp;
+                        &nbsp;
+                        <span class="gray-filtered"> I tuoi episodi</span>
                     </li>
                 </ul>
             </div>
@@ -165,7 +165,7 @@
                             </td>
                         </tr>
 
-                        
+
                     </table>
                 </div>
             </div>
@@ -174,12 +174,20 @@
 
     <div class="footer-player">
         <div class="footer-player-left">
+            <div >
+                <img src="assets/css/images/song-cover.jpeg" alt="" style="width: 3em;">
+            </div>
             <div class="footer-player-left-song">
-                <div class="footer-player-left-song-name">Young as the Morning old as the Sea</div>
-                <div class="footer-player-left-song-artist">Passenger</div>
+                <div>
+                    <div>
+                        <span class="footer-player-left-song-name m-0">Young as the</span>
+                        <p class="footer-player-left-song-artist m-0">Passenger</p>
+                    </div>
+                </div>
             </div>
             <div class="footer-player-left-like">
-                <img src="./assets/css/images/FiiledLike.svg" alt="" class="spotify-color" style="height: 18px; width: 18px;">
+                <img src="./assets/css/images/FiiledLike.svg" alt="" class="spotify-color"
+                    style="height: 18px; width: 18px;">
             </div>
         </div>
         <div class="footer-player-middle">
