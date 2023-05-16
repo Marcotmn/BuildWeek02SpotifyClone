@@ -80,7 +80,7 @@ body {
 }
 
 #centralContainer {
-  margin-left: 0.5px;
+  margin-left: 0.4px;
   height: fit-content;
 }
 
@@ -262,9 +262,12 @@ body {
   background-image: linear-gradient(to right, #ffffff 30%, #808080 30%);
 }
 
-
 #testo-schedeBuonasera p {
   margin-bottom: 0;
-  font-size: 8px;
+  font-size: 10px;
   margin-left: 10px;
+}
+
+#card {
+  width: 265px;
 }
