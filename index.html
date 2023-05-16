@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Spotify buildweek </title>
+    <link rel="icon" type="image/x-icon"
+      href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/1982px-Spotify_icon.svg.png" />
     <link rel="stylesheet" href="./assets/css/circular-font.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
@@ -25,24 +27,69 @@
       <!--CONTAINER SINISTRA-->
       <div class="row col-md-3 p-0">
 
+
+
         <!--MENù SINISTRA-->
-        <nav class="navbar bg-black ps-3 align-items-start">
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Active</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">Disabled</a>
-            </li>
+        <div class=" bg-black ps-3 align-items-start">
+          <ul>
+            <li><a href="./home.html"><i class="bi bi-house-door-fill me-1"></i>Home</a></li>
+            <li><a href="./searchPage.html"><i class="bi bi-search me-1"></i>Cerca</a></li>
+            <li><a href="./albums.html"><img
+                  src="https://cdn.sanity.io/images/tsbk0zvv/production/f1a3a073127aade3fa0377ce143a166d56d596e9-24x24.svg?w=60&fit=max&auto=format"
+                  width="18px" alt="" class="me-1">La tua libreria</a></li>
           </ul>
-        </nav>
+         <ul>
+            <li><a href="javascript:void(0)"><i class="bi bi-plus-square me-1"></i>Crea playlist</a></li>
+            <li><a href="javascript:void(0)"><i class="bi bi-bookmark-fill me-1"></i>Brani che ti piacciono</a></li>
+            <li><a href="javascript:void(0)"><i class="bi bi-heart-fill me-1"></i>I tuoi episodi</a></li>
+          </ul>
+        </div>
+        <div class="recentNav bg-black ps-3 align-items-start">
+          <ul id="UlPlaylist"><a class="my-1" href="">
+              <li>
+                <p class="card-title">THE AFTER HOURS, TIL DAWN</p>
+              </li>
+           
+              <li>
+                <p class="card-title">Play</p>
+              </li>
+            
+              <li>
+                <p class="card-title">White rari</p>
+              </li>
+            
+              <li>
+                <p class="card-title">Quest For Fire</p>
+              </li>
+           
+              <li>
+                <p class="card-title">after hours</p>
+              </li>
+         
+              <li>
+                <p class="card-title">OBE</p>
+              </li>
+           
+              <li>
+                <p class="card-title">☕</p>
+              </li>
+            
+              <li>
+                <p class="card-title">gesaffelstein</p>
+              </li>
+            
+              <li>
+                <p class="card-title">LIBERATO</p>
+              </li>
+            </a>
+          </ul>
+      
       </div>
+      </div>
+      
+
+      
+
 
       <!--CONTAINER CENTRALE-->
 
@@ -166,6 +213,7 @@
         </div>
       </div>
     </div>
+
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
