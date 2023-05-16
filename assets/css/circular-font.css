@@ -81,7 +81,10 @@ body {
 
 #centralContainer {
   margin-left: 0.5px;
+  height: fit-content;
 }
+
+
 
 #avatarNav {
   margin-right: 10px;
