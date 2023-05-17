@@ -696,3 +696,22 @@ hr {
   font-size: 11px;
   margin-bottom: 0;
 }
+
+.card {
+  background-color: #171717 !important;
+  padding: 10px;
+  border-style: none !important;
+}
+
+.card .card-title {
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.card .card-descrb {
+  color: rgb(133, 133, 133);
+  font-size: 10px;
+  font-weight: 700;
+}
