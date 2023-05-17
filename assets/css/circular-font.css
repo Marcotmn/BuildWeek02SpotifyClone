@@ -66,7 +66,6 @@
   font-style: italic;
 }
 
-
 :root {
   --spotify-green: #1db954;
   --footer-height: 40px;
@@ -106,44 +105,49 @@ body {
   display: flex;
   flex-direction: column;
 }
-#personalized-icons{
-    display: flex;
-    align-items: center;
+#personalized-icons {
+  display: flex;
+  align-items: center;
 }
-.bi-suit-heart-fill{
-    border: 1px solid hidden;
-    border-radius: 10%;
-    width: 1.6em;
-    height: 1.6em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color:rgba(160,160,160,225);
-    background: rgb(45,20,139);
-    background: linear-gradient(140deg, rgba(45,20,139,1) 0%, rgba(99,100,160,1) 50%, rgba(126,148,144,1) 100%); ;
-  }
-  .bi-bookmark-fill{
-    border: 1px solid hidden;
-    border-radius: 10%;
-    width: 1.6em;
-    height: 1.6em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #149643;
-    background-color: #004537;
-  }
-  .bi-plus{
-    border: 1px solid hidden;
-    border-radius: 10%;
-    width: 1.6em;
-    height: 1.6em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    background-color: rgba(160,160,160,225);
-  }
+.bi-suit-heart-fill {
+  border: 1px solid hidden;
+  border-radius: 10%;
+  width: 1.6em;
+  height: 1.6em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(160, 160, 160, 225);
+  background: rgb(45, 20, 139);
+  background: linear-gradient(
+    140deg,
+    rgba(45, 20, 139, 1) 0%,
+    rgba(99, 100, 160, 1) 50%,
+    rgba(126, 148, 144, 1) 100%
+  );
+}
+.bi-bookmark-fill {
+  border: 1px solid hidden;
+  border-radius: 10%;
+  width: 1.6em;
+  height: 1.6em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #149643;
+  background-color: #004537;
+}
+.bi-plus {
+  border: 1px solid hidden;
+  border-radius: 10%;
+  width: 1.6em;
+  height: 1.6em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background-color: rgba(160, 160, 160, 225);
+}
 
 .menu {
   display: flex;
@@ -238,10 +242,6 @@ body {
 .playlist-arrows {
   display: flex;
   align-items: center;
-}
-
-.arrow-container {
-  margin-right: 15px !important;
 }
 
 .playlist-top {
@@ -374,7 +374,7 @@ body {
     rgba(0, 0, 0, 1) 100%
   );
 }
-.playlist-songs-container h2{
+.playlist-songs-container h2 {
   color: white;
   font-weight: 700;
 }
@@ -490,16 +490,16 @@ body {
 }
 .product-title {
   white-space: nowrap;
-  overflow: hidden ;
+  overflow: hidden;
   font-weight: 600;
-  font-size: xl-large; 
-  padding: 10px; 
+  font-size: xl-large;
+  padding: 10px;
   margin: 0;
 }
-.product-title p{
+.product-title p {
   margin: 3px;
   white-space: nowrap;
-  overflow: hidden ;
+  overflow: hidden;
   text-overflow: ellipsis;
   width: 80%;
 }
@@ -507,7 +507,6 @@ body {
 .footer-player-left-like svg path {
   fill: var(--spotify-green);
 }
-
 
 .footer-player-left {
   display: flex;
@@ -563,7 +562,6 @@ body {
   border-radius: 5px;
   position: relative;
   border: none;
-
 }
 
 .footer-player-middle-slider {
@@ -586,8 +584,8 @@ body {
   margin-right: 20px;
   width: 16px;
 }
-.footer-image-player-on{
-    width: 2em;
+.footer-image-player-on {
+  width: 2em;
 }
 
 #centralContainer {
@@ -600,7 +598,7 @@ body {
     rgba(0, 0, 0, 1) 100%
   );
 }
-hr{
+hr {
   color: grey;
 }
 
@@ -632,7 +630,6 @@ hr{
 #avatarNav {
   margin-right: 10px;
 }
-
 
 #hero-home {
   background: rgb(0, 0, 0);
@@ -675,3 +672,13 @@ hr{
   color: rgb(119, 119, 119);
   font-weight: 700;
 }
+#contenitore-scheda {
+
+}
+
+#contenitore-scheda p {
+  font-size: 8px;
+  margin-bottom: 0;
+  margin-left: 10px;
+}
+
