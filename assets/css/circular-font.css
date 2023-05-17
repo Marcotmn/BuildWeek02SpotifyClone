@@ -85,7 +85,6 @@ body {
     Arial, sans-serif;
   max-height: 100vh;
   height: 100vh;
-  overflow-y: hidden;
 }
 
 .home {
@@ -95,7 +94,7 @@ body {
 
 .left {
   background-color: black;
-  height: 100vh;
+  height: 100vw;
   left: 0;
   bottom: 0;
   top: 0;
@@ -364,7 +363,7 @@ body {
 }
 
 .playlist-songs-container {
-  height: 100%;
+  display: contents;
   padding: 20px;
   padding-top: 0;
   background: rgb(33, 33, 33);
@@ -487,6 +486,7 @@ body {
   bottom: 0;
   width: 100%;
   height: var(--footer-height);
+  overflow: scroll;
 }
 .product-title {
   white-space: nowrap;
@@ -673,7 +673,6 @@ hr {
   font-weight: 700;
 }
 #contenitore-scheda {
-
 }
 
 #contenitore-scheda p {
@@ -682,3 +681,18 @@ hr {
   margin-left: 10px;
 }
 
+#amici-listening p {
+  font-size: 10px;
+  margin-bottom: 3px;
+  color: rgb(156, 156, 156);
+}
+
+#amici-listening h6 {
+  font-size: 8px;
+  color: rgb(159, 159, 159);
+}
+
+#cards-buonasera p {
+  font-size: 11px;
+  margin-bottom: 0;
+}
