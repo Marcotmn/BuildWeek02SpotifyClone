@@ -66,7 +66,6 @@
   font-style: italic;
 }
 
-
 :root {
   --spotify-green: #1db954;
   --footer-height: 40px;
@@ -81,12 +80,12 @@ body,
 body {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
   overflow-x: hidden;
   font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
-  max-height: 100vh;
+  width: 100%;
   height: 100vh;
-  overflow-y: hidden;
 }
 
 .home {
@@ -96,8 +95,7 @@ body {
 
 .left {
   background-color: black;
-  position: relative;
-  width: 400px;
+  height: 100vh;
   left: 0;
   bottom: 0;
   top: 0;
@@ -107,44 +105,49 @@ body {
   display: flex;
   flex-direction: column;
 }
-#personalized-icons{
-    display: flex;
-    align-items: center;
+#personalized-icons {
+  display: flex;
+  align-items: center;
 }
-.bi-suit-heart-fill{
-    border: 1px solid hidden;
-    border-radius: 10%;
-    width: 1.6em;
-    height: 1.6em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color:rgba(160,160,160,225);
-    background: rgb(45,20,139);
-    background: linear-gradient(140deg, rgba(45,20,139,1) 0%, rgba(99,100,160,1) 50%, rgba(126,148,144,1) 100%); ;
-  }
-  .bi-bookmark-fill{
-    border: 1px solid hidden;
-    border-radius: 10%;
-    width: 1.6em;
-    height: 1.6em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #149643;
-    background-color: #004537;
-  }
-  .bi-plus{
-    border: 1px solid hidden;
-    border-radius: 10%;
-    width: 1.6em;
-    height: 1.6em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    background-color: rgba(160,160,160,225);
-  }
+.bi-suit-heart-fill {
+  border: 1px solid hidden;
+  border-radius: 10%;
+  width: 1.6em;
+  height: 1.6em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(160, 160, 160, 225);
+  background: rgb(45, 20, 139);
+  background: linear-gradient(
+    140deg,
+    rgba(45, 20, 139, 1) 0%,
+    rgba(99, 100, 160, 1) 50%,
+    rgba(126, 148, 144, 1) 100%
+  );
+}
+.bi-bookmark-fill {
+  border: 1px solid hidden;
+  border-radius: 10%;
+  width: 1.6em;
+  height: 1.6em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #149643;
+  background-color: #004537;
+}
+.bi-plus {
+  border: 1px solid hidden;
+  border-radius: 10%;
+  width: 1.6em;
+  height: 1.6em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background-color: rgba(160, 160, 160, 225);
+}
 
 .menu {
   display: flex;
@@ -224,6 +227,7 @@ body {
 .right {
   width: 100%;
   height: 100%;
+  display: contents;
 }
 
 .arrow-container {
@@ -241,10 +245,6 @@ body {
   align-items: center;
 }
 
-.arrow-container {
-  margin-right: 15px !important;
-}
-
 .playlist-top {
   display: flex;
   justify-content: space-between;
@@ -253,6 +253,13 @@ body {
 
 .playlist-header {
   padding: 20px;
+  padding-top: 5px;
+  background: rgb(33, 33, 33);
+  background: linear-gradient(
+    173deg,
+    rgba(33, 33, 33, 1) 52%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }
 
 .playlist-top-email {
@@ -273,11 +280,11 @@ body {
 }
 
 .playlist-header {
-  background: rgb(255, 255, 255);
+  background: rgb(33, 33, 33);
   background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(119, 119, 119, 1) 100%
+    173deg,
+    rgba(33, 33, 33, 1) 52%,
+    rgba(0, 0, 0, 1) 100%
   );
 }
 
@@ -358,15 +365,18 @@ body {
 }
 
 .playlist-songs-container {
-  height: 100%;
-  padding: 20px;
-  background: rgb(95, 95, 95);
+  display: contents;
+  padding-top: 0;
+  background: rgb(33, 33, 33);
   background: linear-gradient(
-    180deg,
-    rgba(95, 95, 95, 1) 0%,
-    rgba(18, 18, 18, 1) 22%,
-    rgba(18, 18, 18, 1) 100%
+    173deg,
+    rgba(33, 33, 33, 1) 52%,
+    rgba(0, 0, 0, 1) 100%
   );
+}
+.playlist-songs-container h2 {
+  color: white;
+  font-weight: 700;
 }
 
 .playlist-buttons-download,
@@ -477,19 +487,20 @@ body {
   bottom: 0;
   width: 100%;
   height: var(--footer-height);
+  overflow: scroll;
 }
 .product-title {
   white-space: nowrap;
-  overflow: hidden ;
+  overflow: hidden;
   font-weight: 600;
-  font-size: xl-large; 
-  padding: 10px; 
+  font-size: xl-large;
+  padding: 10px;
   margin: 0;
 }
-.product-title p{
+.product-title p {
   margin: 3px;
   white-space: nowrap;
-  overflow: hidden ;
+  overflow: hidden;
   text-overflow: ellipsis;
   width: 80%;
 }
@@ -497,7 +508,6 @@ body {
 .footer-player-left-like svg path {
   fill: var(--spotify-green);
 }
-
 
 .footer-player-left {
   display: flex;
@@ -553,7 +563,6 @@ body {
   border-radius: 5px;
   position: relative;
   border: none;
-  -webkit-appearance: var(--spotify-green);
 }
 
 .footer-player-middle-slider {
@@ -576,53 +585,113 @@ body {
   margin-right: 20px;
   width: 16px;
 }
-.footer-image-player-on{
-    width: 2em;
-}
-.playlist-cover-artist {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-top: 20px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.footer-image-player-on {
+  width: 2em;
 }
 
-.YellowBlock {
+#centralContainer {
+  margin-left: 0.4px;
+  height: fit-content;
+  background: rgb(33, 33, 33);
+  background: linear-gradient(
+    173deg,
+    rgba(33, 33, 33, 1) 52%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+hr {
+  color: grey;
+}
+
+.arrows button {
+  border-radius: 50px;
+  border-style: none;
+  color: white;
+  background-color: black;
   font-size: 12px;
-  font-weight: 600;
-  font-family: "AvenirLTStd-Black";
+  width: 25px;
+  height: 25px;
+  margin-left: 12px;
+}
+
+#bgDropProfile {
+  border-radius: 50px;
+  height: 30px;
+  width: 150px;
+  font-size: 10px;
+  background-color: black;
   color: white;
 }
-.artist-info {
-  color: rgb(255, 255, 255);
-  padding-left: 20px;
-}
-.artist-title {
-  font-size: 86px;
-  font-weight: 1000;
 
-  margin-top: 10px;
-  font-family: "AvenirLTStd-Black";
-}
-.followage p{
-  margin-left: 20px;
-  color: aliceblue;
-  border-color: black;
-}
-.banner {
-  width: 100%; /* o un valore specifico in pixel */
-  height: 400px; /* o un valore specifico in pixel */
-  margin: 0;
-  padding: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+#avatar {
+  margin-left: -10px;
+  margin-right: 5px;
 }
 
+#avatarNav {
+  margin-right: 10px;
+}
 
-.playlist-cover-artist,
-.playlist-songs-container {
-  background-color: rgba(255, 255, 255, 0.7); /* Opzionale: Imposta un colore di sfondo per i due div */
+#hero-home {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    59deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(29, 29, 29, 1) 52%
+  );
+}
+
+#testoHero p {
+  font-size: 12px;
+  margin-left: 16px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+#buttonsHero button {
+  background-color: rgb(45, 207, 45);
+  border-radius: 50px;
+  border-style: none;
+  width: 80px;
+  height: 40px;
+  margin-left: 16px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+#buttonsHero i {
+  color: white;
+  margin-left: 16px;
+  font-size: 25px;
+}
+
+#nascondi-annunci button {
+  border-radius: 25px;
+  border-style: none;
+  font-size: 8px;
+  background-color: rgb(40, 40, 40);
+  color: rgb(119, 119, 119);
+  font-weight: 700;
+}
+
+#contenitore-scheda p {
+  font-size: 8px;
+  margin-bottom: 0;
+  margin-left: 10px;
+}
+
+#amici-listening p {
+  font-size: 10px;
+  margin-bottom: 3px;
+  color: rgb(156, 156, 156);
+}
+
+#amici-listening h6 {
+  font-size: 8px;
+  color: rgb(159, 159, 159);
+}
+
+#cards-buonasera p {
+  font-size: 11px;
+  margin-bottom: 0;
 }
