@@ -319,3 +319,22 @@ body {
 .txt p {
   margin: 0;
 }
+
+.timeAgo{
+  font-size: 0.7rem;
+  }
+  span{
+      font-size: 0.8rem;
+  }
+  .small-image{
+      width: 3rem;
+  }
+  aside{
+      width: 50rem;
+  }
+  h6{
+      margin: 0 !important;
+  }
+  .small-image{
+      width: 3rem;
+  }
