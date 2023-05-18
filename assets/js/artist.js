@@ -33,7 +33,7 @@ const playlistNames = [
     "ma(ncanza) che cazzo ne so io (gen-feb 2021)",
 ]
   
-
+// SIDEBAR -DX
   
   window.onload = () => {
     const playlistUl = document.getElementById("chill-vibes");
@@ -45,6 +45,7 @@ const playlistNames = [
     });
   };
 
+//POPOLAMENTO CARDS
   window.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const artistId = urlParams.get('id');
@@ -65,5 +66,23 @@ const playlistNames = [
         });
     }
   });
+  //PULSANTE FOLLOWING
+  window.onload = () => {
+    const playlistUl = document.getElementById("chill-vibes");
+
+    playlistNames.forEach(playlistName => {
+      const li = document.createElement("li");
+      li.innerText = playlistName;
+      playlistUl.appendChild(li);
+    });
+  };
+  function toggleFollow() {
+    var followButton = document.querySelector('.Following-button');
+    if (followButton.innerText === 'Following') {
+        followButton.innerText = 'Follow';
+    } else {
+        followButton.innerText = 'Following';
+    }
+}
   
   
