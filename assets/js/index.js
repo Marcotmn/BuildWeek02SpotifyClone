@@ -49,13 +49,15 @@ async function populateCards() {
       throw new Error("Errore nella richiesta API");
     }
     const data = await response.json();
-    console.log(data)
+    console.log(data);
 
     const container = document.getElementById("contenitore-buonasera");
 
+    let cardMarkup = "";
+
     for (let i = 0; i < 6; i++) {
       const item = data.data[i];
-      const cardMarkup = `
+      cardMarkup += `
           <div id="cards-buonasera"
             class="d-flex align-items-center">
             <div>
@@ -66,14 +68,16 @@ async function populateCards() {
             </div>
           </div>
         `;
-      container.insertAdjacentHTML("beforeend", cardMarkup);
     }
+    container.innerHTML = cardMarkup;
   } catch (error) {
     console.error("Si è verificato un errore:", error);
   }
 }
 
 populateCards();
+
+/////////////////////////////
 
 async function populateOtherCards() {
   try {
@@ -84,21 +88,27 @@ async function populateOtherCards() {
       throw new Error("Errore nella richiesta API");
     }
     const data = await response.json();
-     console.log(data)
+    console.log(data);
 
     const container = document.getElementById("cards-artist-description");
+    let otherCardMarkup = "";
 
-    for (let i = 0; i < 5 && i < data.data.length; i++) {
+    for (let i = 0; i < 5; i++) {
       const item = data.data[i];
-      const cardMarkup = `
+      otherCardMarkup += `
         <div id="othercards" class="card me-2 rounded-3" style="width: 10em;">
         <img src="${item.album.cover_big}" class="card-img-top img-fluid rounded-1 mb-2" alt="...">
         <div class="card-body p-0">
-          <p class="card-title">${item.title}</p>
-          <p class="card-descrb">La playlist più calda del momento</p>
+          <a class="card-title" href="pag_2.html">${item.title}</a>
+          <div>
+          <a class="card-descrb" href="pag_2.html">${item.artist.name}</a>
+          </div>
+          <div>
+          </div>
         </div>
+
       </div>`;
-      container.insertAdjacentHTML("beforeend", cardMarkup);
+      container.innerHTML = otherCardMarkup;
     }
   } catch (error) {
     console.error("Si è verificato un errore:", error);
@@ -107,34 +117,40 @@ async function populateOtherCards() {
 
 populateOtherCards();
 
+//////////////////////////////////
 
 async function populateOtherCardsSec() {
-    try {
-      const response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/deezer/search?q=ac-dc"
-      );
-      if (!response.ok) {
-        throw new Error("Errore nella richiesta API");
-      }
-      const data = await response.json();
-  
-      const container = document.getElementById("cards-artist-description2");
-  
-      for (let i = 0; i < 5 && i < data.data.length; i++) {
-        const item = data.data[i];
-        const cardMarkup = `
-          <div id="othercards" class="card me-2 rounded-3" style="width: 10em;">
-          <img src="${item.album.cover_big}" class="card-img-top img-fluid rounded-1 mb-2" alt="...">
-          <div class="card-body p-0">
-            <p class="card-title">${item.title}</p>
-            <p class="card-descrb">La playlist più calda del momento</p>
-          </div>
-        </div>`;
-        container.insertAdjacentHTML("beforeend", cardMarkup);
-      }
-    } catch (error) {
-      console.error("Si è verificato un errore:", error);
+  try {
+    const response = await fetch(
+      "https://striveschool-api.herokuapp.com/api/deezer/search?q=ac-dc"
+    );
+    if (!response.ok) {
+      throw new Error("Errore nella richiesta API");
     }
+    const data = await response.json();
+
+    const container = document.getElementById("cards-artist-description2");
+
+    let othersCardMarkup = "";
+
+    for (let i = 0; i < 5; i++) {
+      const item = data.data[i];
+      othersCardMarkup = `
+      <div id="othercards" class="card me-2 rounded-3" style="width: 10em;">
+      <img src="${item.album.cover_big}" class="card-img-top img-fluid rounded-1 mb-2" alt="...">
+      <div class="card-body p-0">
+        <a class="card-title" href="pag_2.html">${item.title}</a>
+        <div>
+        <a class="card-descrb" href="pag_2.html">${item.artist.name}</a>
+        </div>
+      </div>
+    </div>`;
+
+      container.innerHTML += othersCardMarkup;
+    }
+  } catch (error) {
+    console.error("Si è verificato un errore:", error);
   }
-  
-  populateOtherCardsSec();
+}
+
+populateOtherCardsSec();

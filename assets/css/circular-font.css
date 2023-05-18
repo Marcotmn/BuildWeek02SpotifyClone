@@ -762,3 +762,7 @@ hr {
   font-size: 10px;
   font-weight: 700;
 }
+
+#othercards a {
+  text-decoration: none;
+}
