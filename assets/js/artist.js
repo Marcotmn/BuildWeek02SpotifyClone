@@ -44,5 +44,26 @@ const playlistNames = [
       playlistUl.appendChild(li);
     });
   };
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const artistId = urlParams.get('id');
+    
+    if (artistId) {
+      const apiUrl = `https://striveschool-api.herokuapp.com/api/deezer/artist/${0}`;
+
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(artistData => {
+         
+          document.getElementById('artist').innerHTML = artistData.name;
+          document.getElementById('artistImage').src = artistData.picture;
+          
+        })
+        .catch(error => {
+          console.error('Si è verificato un errore nella richiesta API:', error);
+        });
+    }
+  });
   
   
