@@ -40,53 +40,25 @@ const playlistNames = [
   const referenceId = albumId.get("idAlbum") 
   const lista = document.querySelector('#playListItems');
 
- //elenco delle playlist di lidia! 
-playlistNames.forEach(items=>{
+ //elenco delle playlist di lidia!
+ function playlist (){
+  playlistNames.forEach(items=>{
   let newList = document.createElement('li');
   newList.innerText += items ;
 lista.appendChild(newList)
 })
+ } 
+ playlist();
+
 
 //FUNCTIOON HOME CON RILEVANZA ID PARAMETRO PER PAG 2
 
- async function query (){
-  try{
-    const res = await fetch(fetchQuery)
-    if(!res.ok){
-      throw new Error ('aia')
-    }
-    const replace = await res.json()
-    const dates = replace.data;
-    console.log(dates)
-    const cards = document.querySelector('#cards');
-    for(let i = 0; i < dates.length; i++){
-      console.log(dates[i].album.id)
-      cards.innerHTML += `<div id="cards-buonasera"
-      style="width: 16em; background-color: #2c2c2c; border: 1px solid red hidden; border-radius: 3%; overflow: hidden;"
-      class="d-flex align-items-center">
-      <a href="./pagina_due.html?idAlbum=${dates[i].album.id}"></a>
-      <div>
-        <img src="${dates[i].album.cover_big}" alt="" style="width: 4em;" class="me-2">
-      </div>
-      <div>
-        <p>${dates[i].album.title}</p>
-        <p>(sett-ott 2022)</p>
-      </div>
-    </div>`
-
-    }
-  }
-  catch(err){
-    console.error(err)
-  }
- }
- query();
  //creare function per randomizzare le card da mandare a schermo da fare alla fine
 
-// fetch per albumid, una volta fecciata mandare a schermo ( fare test in serata)/
- //async function album (){
-  /*try{
-    const res = await fetch(fetcAlbumId + '442976105', )//esempio di id, corrispondente, la async funziona
+//fetch per albumid, una volta fecciata mandare a schermo ( fare test in serata)/
+ async function album (){
+  try{
+    const res = await fetch(fetcAlbumId + referenceId, )//esempio di id, corrispondente, la async funziona
     if(!res.ok){
       throw new Error ('aia')
     }
@@ -96,22 +68,22 @@ lista.appendChild(newList)
     const albumPreview = document.querySelector('#cose')
     for(let i = 0; i < albums.length; i++){
       console.log(albums)
-      /*albumPreview.innerHTML += `cose`*/
+      albumPreview.innerHTML += ``
       
 
-//    }
- // }
- // catch(err){
-   // console.error('manca troppa roba')
- // }*/
- //}
- //album();
+    }
+  }
+ catch(err){
+   console.error('manca troppa roba')
+ }
+ }
+ album();
 //function per pag 2 inserimento elementi nel container 
 
 
 //fetch pag artist con rilevamento tramide id 
-// async function artist (){
-  /*try{
+ async function artist (){
+  try{
     const res = await fetch(fetchArtist+ referenceId)//esempio di id, corrispondente, la async funziona
     if(!res.ok){
       throw new Error ('aia')
@@ -121,16 +93,16 @@ lista.appendChild(newList)
     console.log(dates)
     const artistPreview = document.querySelector('#cards');
     for(let i = 0; i < artistObj.length; i++){
-      console.log(artistObj)*/
-      /*artistPreview.innerHTML += `cose`*/
+      console.log(artistObj)
+    artistPreview.innerHTML += `cose`
 
-    //}
- // }
- // catch(err){
- //   console.error('miao')
- // }
-// }
- //artist();
+    }
+ }
+  catch(err){
+    console.error('miao')
+  }
+ }
+artist();
 
 //creare le costanti in ogni script. richiamare il searchParms
 //creare una variabile numerica che si incrementa ogni volta che viene iniziallizzata una pagina con una lista di contenuti mandati a schermo
@@ -141,3 +113,8 @@ lista.appendChild(newList)
 //fare gli addEventListner per quando viene effettuata la call nella home principale
 //scrivere fanction separate in ogni script; inizializzare la fetch con un if: fare un forEach o for, per creare contenuti nella pagina di riferimento.
 //ricordare a lidia che questo lavoro lo sto facendo da solo. :D
+window.onload = () => {
+  playlist();
+  query();
+  cardsContainer()
+}
