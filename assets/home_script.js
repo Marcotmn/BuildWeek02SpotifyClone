@@ -100,10 +100,12 @@ async function populateGoodEvening() {
       <div id="cards-buonasera"
         class="d-flex align-items-center">
         <div>
-          <img src="${home[i].album.cover_big}" alt="" style="width: 4em;" class="me-2">
+        <a href="/album.html?idAlbum=${home[i].album.id}"><img src="${home[i].album.cover_big}" alt="" style="width: 4em;" class="me-2"></a>
+          
         </div>
         <div>
-          <p>${home[i].title}</p>
+        <a href="/album.html?idAlbum=${home[i].album.id}"><p>${home[i].title}</p></a>
+        
         </div>
       </div>
     `;
@@ -116,7 +118,7 @@ async function populateGoodEvening() {
 populateGoodEvening();
 
 const apiOther =
-  "https://striveschool-api.herokuapp.com/api/deezer/search?q=yellowcard";
+  "https://striveschool-api.herokuapp.com/api/deezer/search?q={query}";
 
 async function populateOtherCards() {
   try {
@@ -132,11 +134,12 @@ async function populateOtherCards() {
       console.log(home[i]);
       otherBanner.innerHTML += `
       <div id="othercards" class="card rounded-3" style="width: 15em;">
-      <img src="${home[i].album.cover_big}" class="card-img-top img-fluid rounded-1 mb-2" alt="...">
+      <a href="/artist_page.html.html?idAlbum=${home[i].artist.id}"><img src="${home[i].artist.cover_big}" class="card-img-top img-fluid rounded-1 mb-2" alt="..."></a>
       <div class="card-body p-0">
-        <a class="card-title" href="pag_2.html">${home[i].title}</a>
+      <a href="/artist_page.html.html?idAlbum=${home[i].artist.id}">${home[i].artist.title}</a>
+        
         <div>
-        <a class="card-descrb" href="pag_2.html">${home[i].artist.name}</a>
+        <a href="/artist_page.html?idAlbum=${home[i].artist.name}"></a>
         </div>
         <div>
         </div>

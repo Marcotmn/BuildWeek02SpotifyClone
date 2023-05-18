@@ -113,8 +113,3 @@ artist();
 //fare gli addEventListner per quando viene effettuata la call nella home principale
 //scrivere fanction separate in ogni script; inizializzare la fetch con un if: fare un forEach o for, per creare contenuti nella pagina di riferimento.
 //ricordare a lidia che questo lavoro lo sto facendo da solo. :D
-window.onload = () => {
-  playlist();
-  query();
-  cardsContainer()
-}
