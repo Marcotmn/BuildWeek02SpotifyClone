@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Spotify</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./assets/css/artist.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline';"
+    />
+  </head>
+
+<body>
+    <div class="container-fluid d-flex p-0">
+      <div class="left col col-md-3">
+        <div class="menu col row">
+          <ul>
+            <li>
+              <img
+                src="./assets/img/iconssvg/ThreeDots.svg"
+                alt=""
+                style="width: 2em"
+              />
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="./assets/img/iconssvg/Home.svg"
+                  alt=""
+                  class="gray-filtered"
+                />
+                <span>Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="./assets/img/iconssvg/Search.svg"
+                  alt=""
+                  class="gray-filtered"
+                />
+                <span>Cerca</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="./assets/img/iconssvg/YourLibrary.svg"
+                  alt=""
+                  class="gray-filtered"
+                />
+                <span>La tua libreria</span>
+              </a>
+            </li>
+            <div style="height: 30px"></div>
+            <li id="personalized-icons">
+              <i class="bi bi-plus"></i>
+              <span class="gray-filtered">Crea Playlist</span>
+            </li>
+            <li id="personalized-icons">
+              <i class="bi bi-suit-heart-fill"></i>
+              <span class="gray-filtered">Brani che ti piacciono</span>
+            </li>
+            <li id="personalized-icons">
+              <i class="bi bi-bookmark-fill"></i>
+              <span class="gray-filtered"> I tuoi episodi</span>
+            </li>
+          </ul>
+        </div>
+        <ul style=" list-style: none ; overflow-y: auto ;" id="chill-vibes" class="ps-0 text-white ">
+         
+        </ul>
+      </div>
+      <!-- hero centrale-->
+
+      <div class="container-md p-0 m-0">
+        <div class="right row col-lg-12">
+          
+            <div
+              class="artist-section-page-3"
+              style="
+                background-image: url(https://cdn.discordapp.com/attachments/1107581814337441893/1108374934989844561/d414fn0-c154c3d2-6c00-403b-a554-7ca4fa147710.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+               
+              "
+            >
+              <div
+                class="p-0 m-0 d-flex justify-content-between align-items-center"
+                id="navbar"
+              >
+                <div id="arrows" class="d-flex align-items-center my-2">
+                  <!--ARROWS-->
+                  <div class="arrows">
+                    <button>
+                      <i class="bi bi-chevron-left"></i>
+                    </button>
+                  </div>
+                  <div class="arrows">
+                    <button>
+                      <i class="bi bi-chevron-right"></i>
+                    </button>
+                  </div>
+                </div>
+                <!--DROPDOWN IMMAGINE PROFILO-->
+                <div class="dropdown" id="avatarNav">
+                  <button
+                    class="btn dropdown-toggle d-flex align-items-center justify-content-between"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    id="bgDropProfile"
+                  >
+                    <span
+                      ><img
+                        src="assets/img/main/image-17.jpg"
+                        id="avatar"
+                        width="25"
+                        class="rounded-circle"
+                      />
+                      Lidia Nautilus...
+                    </span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Another action</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+             <div class="container-banner"> 
+              <div class="px-2 py-3">
+                <div class="d-flex flex-column m-3">
+                  <div>
+                    <div class="m-0 mt-3">
+                      <img id="artistImage"
+                        style="width: 2.2em"
+                        src="./assets/img/main/Check Mark Badge.svg"
+                      />
+                      <span class="text-light"> Artista verificato </span>
+                    </div>
+                    <p
+                      class="m-0"
+                      id="artist"
+                      style="color: white; font-weight: 700; font-size: 4rem"
+                    >
+                      Skrillex
+                    </p>
+                    <p
+                      class="m-0"
+                      id="ascoltatori"
+                      style="color: white; font-weight: 600; font-size: 15px"
+                    >
+                      20.701.822 ascoltatori mensili
+                    </p>
+                  </div>
+                </div>
+            </div>
+            </div>
+          </div>
+        
+
+            <!--SECTION CENTRALE-->
+
+            <!--CONTAINER CENTRALE DA BUONA SERA IN GIù-->
+            <div class="container-md">
+              <div class="playlist-songs-container row">
+                <!--CONTAINER PAUSE-->
+                <div class="playlist-buttons my-3">
+                  <div class="playlist-buttons-left">
+                    <div class="playlist-buttons-resume-pause">
+                      <img src="./assets/img/iconssvg/Pause.svg" alt="" />
+                    </div>
+                    <div class="ms-4 px-2 py-1 border border-white rounded-1 d-flex align-items-center justify-content-between">
+                      <button class="Following-button" onclick="toggleFollow()">Following</button>
+                  </div>
+
+                    <div class="playlist-buttons-three-dot">
+                      <img src="./assets/img/iconssvg/ThreeDots.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                
+              <!--ALTRO DI CIò CHE TI PIACE-->
+
+              <div class="d-inline-flex justify-content-between text-white">
+                <div style="width: 65%;">
+                  <p style="color: white; font-weight: 700; font-size: 1.8em">
+                    Popolari
+                  </p>
+                  <div class="row text-white  m-0 p-0 gap-3">
+                    <div class="col-12 d-flex justify-content-between flex-shrink"><div>1 <img style="width: 2.2rem" src="./assets/img/search/image-1.jpeg" alt="first-song"> Ocean Avenue  
+                    </div>
+                    <div class="ascoltatori"> 1.000.000.000</div>
+                    <div class="durata">3:51</div>
+                  </div>
+                    <div class="col-12 d-flex justify-content-between"><div>2 <img style="width: 2.2rem" src="./assets/img/search/image-1.jpeg" alt="first-song"> Ocean Avenue  
+                    </div>
+                    <div class="ascoltatori"> 1.000.000.000</div>
+                    <div class="durata">3:51</div>
+                  </div>
+                    <div class="col-12 d-flex justify-content-between"><div>3 <img style="width: 2.2rem" src="./assets/img/search/image-1.jpeg" alt="first-song"> Ocean Avenue  
+                    </div>
+                    <div class="ascoltatori"> 1.000.000.000</div>
+                    <div class="durata">3:51</div>
+                  </div>
+                    <div class="col-12 d-flex justify-content-between"><div>4 <img style="width: 2.2rem" src="./assets/img/search/image-1.jpeg" alt="first-song"> Ocean Avenue  
+                    </div>
+                    <div class="ascoltatori"> 1.000.000.000</div>
+                    <div class="durata">3:51</div>
+                  </div>
+                    <div class="col-12 d-flex justify-content-between"><div>5 <img style="width: 2.2rem" src="./assets/img/search/image-1.jpeg" alt="first-song"> Ocean Avenue  
+                    </div>
+                    <div class="ascoltatori"> 1.000.000.000</div>
+                    <div class="durata">3:51</div>
+                  </div>
+                
+
+
+                  </div>
+                  <p class="mt-3">Visualizza altro</p>
+                </div>
+                <div class="d-block text-white">
+                  <p class="" style="color: white; font-weight: 700; font-size: 1.8em">
+                    Brani che ti piacciono
+                  </p>
+                  <div class="d-flex justify-content-start">
+                    <img class="rounded-circle me-2" style="width: 3.5rem;" src="./assets/img/search/image-31.jpg" alt="">
+                    <div class="text-white"> <p class="m-0 fw-bold">Hai messo mi piace a 11 brani </p><span style="font-weight: lighter;font-size: small;">Di YellowCard</span>
+                   </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+
+
+    <!--sidebar destra-->
+    <div
+      class="bg-black row col-md-2 text-light p-2"
+      style="font-weight: 700; font-size: 1em"
+    >
+      <!--ATTIVITà AMICI-->
+      <div>
+        <div class="d-flex justify-content-between mb-4">
+          <div>
+            <p class="small">Attivita amici</p>
+          </div>
+          <div>
+            <i class="bi bi-person-add"></i>
+            <i class="ms-1 bi bi-x-lg"></i>
+          </div>
+        </div>
+
+        <!--AMICI-->
+        <div id="amici-listening">
+          <!--ASCOLTO AMICI 1-->
+          <div>
+            <div class="d-flex justify-content-between mb-3">
+              <div immagine>
+                <img
+                  src="assets/img/search/image-37.jpeg"
+                  width="40px"
+                  class="rounded-circle"
+                  alt=""
+                />
+              </div>
+              <div>
+                <p>Giuseppe Ditta</p>
+                <h6>Faccetta nera - Carlo Buti</h6>
+                <h6>
+                  <span><i class="bi bi-disc"></i></span> EP III
+                </h6>
+              </div>
+              <div orario>
+                <h6>4 ore</h6>
+              </div>
+            </div>
+          </div>
+
+          <!--ASCOLTO AMICI 2-->
+          <div>
+            <div class="d-flex justify-content-between mb-3">
+              <div immagine>
+                <img
+                  src="assets/img/search/image-37.jpeg"
+                  class="rounded-circle"
+                  width="40px"
+                  alt=""
+                />
+              </div>
+              <div>
+                <p>Charlie Hookham</p>
+                <h6>In Camera - Yumi Zouma</h6>
+                <h6>
+                  <span><i class="bi bi-disc"></i></span> EP III
+                </h6>
+              </div>
+              <div orario>
+                <h6>4 ore</h6>
+              </div>
+            </div>
+          </div>
+
+          <!--ASCOLTO AMICI 3-->
+          <div>
+            <div class="d-flex justify-content-between">
+              <div immagine>
+                <img
+                  src="assets/img/search/image-37.jpeg"
+                  class="rounded-circle"
+                  width="40px"
+                  alt=""
+                />
+              </div>
+              <div>
+                <p>Charlie Hookham</p>
+                <h6>In Camera - Yumi Zouma</h6>
+                <h6>
+                  <span><i class="bi bi-disc"></i></span> EP III
+                </h6>
+              </div>
+              <div orario>
+                <h6>4 ore</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     <!--footer-->
+     <footer class="fixed-bottom">
+      <div class="footer-player fixed-bottom container-fluid">
+          <div class="footer-player-left">
+              <div>
+                <img src="assets/img/search/image-10.jpg" alt="" style="width: 3em;">
+              </div>
+              <div class="footer-player-left-song">
+                <div>
+                  <div class="product-title">
+                    <p class="footer-player-left-song-name m-0">Young as the mornign sun </p>
+                    <p class="footer-player-left-song-artist m-0">Passenger</p>
+                  </div>
+                </div>
+              </div>
+              <div class="footer-player-left-like">
+                <img src="./assets/img/iconssvg/FiiledLike.svg" alt="" class="spotify-color" style="height: 18px; width: 18px;">
+              </div>
+            </div>
+          <div class="footer-player-middle">
+              <div class="footer-player-middle-buttons gap-4 align-items-center">
+                  <img src="./assets/img/iconssvg/Shuffle.svg" alt="" class="gray-filtered">
+                  <img src="./assets/img/iconssvg/Previous.svg" alt="" class="gray-filtered">
+                  <img src="./assets/img/iconssvg/Pause.svg" alt="" id="pause-button" class="rounded-5">
+                  <img src="./assets/img/iconssvg/Next.svg" alt="" class="gray-filtered">
+                  <img src="./assets/img/iconssvg/Repeat.svg" alt="" class="gray-filtered">
+              </div>
+              <div class="footer-player-middle-slider">
+                  <div class="player-time">1:33</div>
+                  <div class="player-slider">
+                      <input type="range" min="1" max="100" value="30">
+                  </div>
+                  <div class="player-time">4:34</div>
+              </div>
+          </div>
+          
+              
+         
+          <div class="footer-player-right">
+              <div class="footer-player-right-buttons">
+                  <img src="./assets/img/iconssvg/Lyrics.svg" alt="">
+                  <img src="./assets/img/iconssvg/Queue.svg" class="filtered-img" alt="">
+                  <img src="./assets/img/iconssvg/Connect to a device.svg" class="filtered-img" alt="">
+                  <img src="./assets/img/iconssvg/Volume.svg" class="filtered-img" alt="">
+                  <div class="player-slider" style="margin-right: 20px; width: 200px;">
+                      <input type="range" min="1" max="100" value="30" style="width:75px; position: relative; top:-5px;">
+                  </div>
+                  <img src="./assets/img/iconssvg/Full screen.svg" class="filtered-img" alt="">
+              </div>
+          </div>
+      </div>
+  </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/artist.js"></script>
+</body>
+</html>
