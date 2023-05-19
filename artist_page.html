@@ -29,81 +29,63 @@
   </head>
 
 <body>
-    <div class="container-fluid d-flex p-0">
-      <div class="left col col-md-3">
-        <div class="menu col row">
-          <ul>
-            <li>
-              <img
-                src="./assets/img/iconssvg/ThreeDots.svg"
-                alt=""
-                style="width: 2em"
-              />
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="./assets/img/iconssvg/Home.svg"
-                  alt=""
-                  class="gray-filtered"
-                />
-                <span>Home</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="./assets/img/iconssvg/Search.svg"
-                  alt=""
-                  class="gray-filtered"
-                />
-                <span>Cerca</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="./assets/img/iconssvg/YourLibrary.svg"
-                  alt=""
-                  class="gray-filtered"
-                />
-                <span>La tua libreria</span>
-              </a>
-            </li>
-            <div style="height: 30px"></div>
+  <i class="bi bi-patch-check-fill"></i>
+  [15:07]
+  <div class="container-fluid d-flex p-0">
+        <div class="left col col-md-3">
+          <div class="menu col row">
+            <ul>
+              <li id="personalized-icons">
+                  <i><img src="./assets/img/iconssvg/ThreeDots.svg" alt="" style="width: 2em;"></i>
+                  <span></span>
+                  </a>
+              </li>
+              <li id="personalized-icons" class="gray-filtered gap-3">
+                  <i><img src="./assets/img/iconssvg/Home.svg" alt="" style="width: 2em;"></i>
+                  <span>Home</span>
+              </li>
+              <li id="personalized-icons" class="gray-filtered gap-3">
+                  <i><img src="./assets/img/iconssvg/Search.svg" alt="" style="width: 2em;"></i>
+                  <span>Ricerca</span>
+              </li>
+              <li id="personalized-icons" class="gray-filtered gap-3">
+                  <i><img src="./assets/img/iconssvg/YourLibrary.svg" alt="" style="width: 2em;"></i>
+                  <span>La tua libreria</span>
+              </li>
+              <div style="height:30px"></div>
             <li id="personalized-icons">
               <i class="bi bi-plus"></i>
+              &nbsp;
+              &nbsp;
               <span class="gray-filtered">Crea Playlist</span>
             </li>
             <li id="personalized-icons">
               <i class="bi bi-suit-heart-fill"></i>
+              &nbsp;
+              &nbsp;
               <span class="gray-filtered">Brani che ti piacciono</span>
             </li>
             <li id="personalized-icons">
               <i class="bi bi-bookmark-fill"></i>
+              &nbsp;
+              &nbsp;
               <span class="gray-filtered"> I tuoi episodi</span>
             </li>
           </ul>
         </div>
-        <ul style=" list-style: none ; overflow-y: auto ;" id="chill-vibes" class="ps-0 text-white ">
-         
-        </ul>
-      </div>
+        <div>
+          <hr width="100%" style="color:darkgray;">
+        </div>
+          <ul style=" list-style: none ; overflow-y: auto ;" id="chill-vibes" class="ps-0 text-white ">
+  
+          </ul>
+        </div>
       <!-- hero centrale-->
 
       <div class="container-md p-0 m-0">
         <div class="right row col-lg-12">
           
-            <div
-              class="artist-section-page-3"
-              style="
-                background-image: url(https://cdn.discordapp.com/attachments/1107581814337441893/1108374934989844561/d414fn0-c154c3d2-6c00-403b-a554-7ca4fa147710.png);
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: cover;
-               
-              "
-            >
+            <div id="heroSection" class="p-0">
               <div
                 class="p-0 m-0 d-flex justify-content-between align-items-center"
                 id="navbar"
@@ -151,35 +133,6 @@
                   </ul>
                 </div>
               </div>
-             <div class="container-banner"> 
-              <div class="px-2 py-3">
-                <div class="d-flex flex-column m-3">
-                  <div>
-                    <div class="m-0 mt-3">
-                      <img id="artistImage"
-                        style="width: 2.2em"
-                        src="./assets/img/main/Check Mark Badge.svg"
-                      />
-                      <span class="text-light"> Artista verificato </span>
-                    </div>
-                    <p
-                      class="m-0"
-                      id="artist"
-                      style="color: white; font-weight: 700; font-size: 4rem"
-                    >
-                      Skrillex
-                    </p>
-                    <p
-                      class="m-0"
-                      id="ascoltatori"
-                      style="color: white; font-weight: 600; font-size: 15px"
-                    >
-                      20.701.822 ascoltatori mensili
-                    </p>
-                  </div>
-                </div>
-            </div>
-            </div>
           </div>
         
 
@@ -359,54 +312,54 @@
      <!--footer-->
      <footer class="fixed-bottom">
       <div class="footer-player fixed-bottom container-fluid">
-          <div class="footer-player-left">
+        <div class="footer-player-left">
+            <div>
+              <img src="assets/img/search/image-10.jpg" alt="" style="width: 3em;">
+            </div>
+            <div class="footer-player-left-song">
               <div>
-                <img src="assets/img/search/image-10.jpg" alt="" style="width: 3em;">
-              </div>
-              <div class="footer-player-left-song">
-                <div>
-                  <div class="product-title">
-                    <p class="footer-player-left-song-name m-0">Young as the mornign sun </p>
-                    <p class="footer-player-left-song-artist m-0">Passenger</p>
-                  </div>
+                <div class="product-title">
+                  <p class="footer-player-left-song-name m-0">Young as the morning sun </p>
+                  <p class="footer-player-left-song-artist m-0">Passenger</p>
                 </div>
               </div>
-              <div class="footer-player-left-like">
-                <img src="./assets/img/iconssvg/FiiledLike.svg" alt="" class="spotify-color" style="height: 18px; width: 18px;">
-              </div>
             </div>
-          <div class="footer-player-middle">
-              <div class="footer-player-middle-buttons gap-4 align-items-center">
-                  <img src="./assets/img/iconssvg/Shuffle.svg" alt="" class="gray-filtered">
-                  <img src="./assets/img/iconssvg/Previous.svg" alt="" class="gray-filtered">
-                  <img src="./assets/img/iconssvg/Pause.svg" alt="" id="pause-button" class="rounded-5">
-                  <img src="./assets/img/iconssvg/Next.svg" alt="" class="gray-filtered">
-                  <img src="./assets/img/iconssvg/Repeat.svg" alt="" class="gray-filtered">
-              </div>
-              <div class="footer-player-middle-slider">
-                  <div class="player-time">1:33</div>
-                  <div class="player-slider">
-                      <input type="range" min="1" max="100" value="30">
-                  </div>
-                  <div class="player-time">4:34</div>
-              </div>
+            <div class="footer-player-left-like">
+              <img src="./assets/img/iconssvg/FiiledLike.svg" alt="" class="spotify-color" style="height: 18px; width: 18px;">
+            </div>
           </div>
-          
-              
-         
-          <div class="footer-player-right">
-              <div class="footer-player-right-buttons">
-                  <img src="./assets/img/iconssvg/Lyrics.svg" alt="">
-                  <img src="./assets/img/iconssvg/Queue.svg" class="filtered-img" alt="">
-                  <img src="./assets/img/iconssvg/Connect to a device.svg" class="filtered-img" alt="">
-                  <img src="./assets/img/iconssvg/Volume.svg" class="filtered-img" alt="">
-                  <div class="player-slider" style="margin-right: 20px; width: 200px;">
-                      <input type="range" min="1" max="100" value="30" style="width:75px; position: relative; top:-5px;">
-                  </div>
-                  <img src="./assets/img/iconssvg/Full screen.svg" class="filtered-img" alt="">
-              </div>
-          </div>
-      </div>
+        <div class="footer-player-middle">
+            <div class="footer-player-middle-buttons gap-4 align-items-center">
+                <img src="./assets/img/iconssvg/Shuffle.svg" alt="" class="gray-filtered">
+                <img src="./assets/img/iconssvg/Previous.svg" alt="" class="gray-filtered">
+                <img src="./assets/img/iconssvg/Pause.svg" alt="" id="pause-button" class="rounded-5">
+                <img src="./assets/img/iconssvg/Next.svg" alt="" class="gray-filtered">
+                <img src="./assets/img/iconssvg/Repeat.svg" alt="" class="gray-filtered">
+            </div>
+            <div class="footer-player-middle-slider">
+                <div class="player-time">1:33</div>
+                <div class="player-slider">
+                    <input type="range" min="1" max="100" value="30">
+                </div>
+                <div class="player-time">4:34</div>
+            </div>
+        </div>
+
+
+
+        <div class="footer-player-right">
+            <div class="footer-player-right-buttons">
+                <img src="./assets/img/iconssvg/Lyrics.svg" alt="">
+                <img src="./assets/img/iconssvg/Queue.svg" class="filtered-img" alt="">
+                <img src="./assets/img/iconssvg/Connect to a device.svg" class="filtered-img" alt="">
+                <img src="./assets/img/iconssvg/Volume.svg" class="filtered-img" alt="">
+                <div class="player-slider" style="margin-right: 20px; width: 200px;">
+                    <input type="range" min="1" max="100" value="30" style="width:75px; position: relative; top:-5px;">
+                </div>
+                <img src="./assets/img/iconssvg/Full screen.svg" class="filtered-img" alt="">
+            </div>
+        </div>
+    </div>
   </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"

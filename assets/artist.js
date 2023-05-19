@@ -35,7 +35,7 @@ const playlistNames = [
 
 // SIDEBAR -DX
 
-  window.onload = () => {
+    window.onload = () => {
     const playlistUl = document.getElementById("chill-vibes");
 
     playlistNames.forEach(playlistName => {
@@ -45,37 +45,7 @@ const playlistNames = [
     });
   };
 
-//POPOLAMENTO CARDS
-  window.addEventListener('DOMContentLoaded', () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const artistId = urlParams.get('id');
 
-    if (artistId) {
-      const apiUrl = 'https://striveschool-api.herokuapp.com/api/deezer/artist/${0}';
-
-      fetch(apiUrl)
-        .then(response => response.json())
-        .then(artistData => {
-
-          document.getElementById('artist').innerHTML = artistData.name;
-          document.getElementById('artistImage').src = artistData.picture;
-
-        })
-        .catch(error => {
-          console.error('Si è verificato un errore nella richiesta API:', error);
-        });
-    }
-  });
-  //PULSANTE FOLLOWING
-  window.onload = () => {
-    const playlistUl = document.getElementById("chill-vibes");
-
-    playlistNames.forEach(playlistName => {
-      const li = document.createElement("li");
-      li.innerText = playlistName;
-      playlistUl.appendChild(li);
-    });
-  };
   function toggleFollow() {
     var followButton = document.querySelector('.Following-button');
     if (followButton.innerText === 'Following') {
@@ -84,3 +54,66 @@ const playlistNames = [
         followButton.innerText = 'Following';
     }
 }
+
+const fetchArtist = 'https://striveschool-api.herokuapp.com/api/deezer/artist/'
+const albumId = new URLSearchParams(location.search);
+  const referenceId = albumId.get("idAlbum") 
+
+
+  
+async function popolate() {
+try {
+  const artist = await fetch(fetchArtist + "291");
+  if(!artist.ok){
+    throw new Error ('L\'album selezionato non è stato trovato')
+  }
+  const response = await artist.json()
+  console.log(response)
+  const artistPage = response;
+  const banner = `
+             <div id="image-copertina">
+  <img src="${response.picture_xl}" class="card-img-top img-fluid rounded-1 mb-2" alt="..." >
+  </div>
+             <div class="container-banner"> 
+              <div class="px-2 py-3">
+                <div class="d-flex flex-column m-3">
+                  <div>
+                    <div class="m-0 mt-3">
+                      <img id="artistImage"
+                        style="width: 2.2em"
+                        src="./assets/img/iconssvg/Check Mark Badge.svg"
+                      />
+                      <span class="text-light"> Artista verificato </span>
+                    </div>
+                    <p
+                      class="m-0"
+                      id="artist"
+                      style="color: white; font-weight: 700; font-size: 4rem"
+                    >
+                      ${response.name}
+                    </p>
+                    <p
+                      class="m-0"
+                      id="ascoltatori"
+                      style="color: white; font-weight: 600; font-size: 15px"
+                    >
+                      20.701.822 ascoltatori mensili
+                    </p>
+                  </div>
+                </div>
+            </div>
+            </div>
+            
+          
+  `
+  const plays = document.querySelector('#heroSection');
+  plays.innerHTML = banner;
+
+  
+}
+catch (err) {
+  console.error(err)
+}}
+popolate();
+
+
