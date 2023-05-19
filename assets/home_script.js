@@ -82,7 +82,7 @@ async function populateHero() {
 populateHero();
 
 const apiHomeEvening =
-  "https://striveschool-api.herokuapp.com/api/deezer/search?q={query}";
+  "https://striveschool-api.herokuapp.com/api/deezer/search?q=love";
 
 async function populateGoodEvening() {
   try {
@@ -118,7 +118,7 @@ async function populateGoodEvening() {
 populateGoodEvening();
 
 const apiOther =
-  "https://striveschool-api.herokuapp.com/api/deezer/search?q={query}";
+  "https://striveschool-api.herokuapp.com/api/deezer/search?q={artist}";
 
 async function populateOtherCards() {
   try {
