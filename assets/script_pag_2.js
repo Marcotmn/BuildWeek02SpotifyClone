@@ -49,114 +49,82 @@ lista.appendChild(newList)
 })
  } 
 playlist();
-album();
-if(referenceId){
+
  async function album (){
   try{
-    const res = await fetch(fetcAlbumId + referenceId, )//esempio di id, corrispondente, la async funziona
+    const res = await fetch(fetcAlbumId + referenceId)//esempio di id, corrispondente, la async funziona
     if(!res.ok){
       throw new Error ('L\'album selezionato non è stato trovato')
     }
     const replace = await res.json()
-    const albums = replace.data;
+    const albums = replace;
     console.log(albums);
      let newHero = `<div class="playlist-cover">
-     <img src="./assets/img/iconssvg/playlist-cover.png" alt="">
+     <img src="${albums.cover_big}" alt="">
  </div>
  <div class="playlist-info">
-     <div class="playlist-public"> PUBLIC PLAYLIST</div>
-     <div class="playlist-title">Classic Road Trip Songs</div>
-     <div class="playlist-description">A soundtrack to fuel your good mood while on the road.
-     </div>
+     <div class="playlist-public">${albums.cover}</div>
+     <div class="playlist-title">${albums.title}</div>
+     <div class="playlist-description"></div>
      <div style="height: 10px;"></div>
      <div class="playlist-stats">
          <img src="./assets/img/iconssvg/spotify-logo.png" width="24px" height="24px" alt="">
          <span> Spotify ·</span>
          <span>5,131,321 likes · </span>
-         <span>100 songs, </span>
-         <span>6 hr 57 min </span>
+         <span>Duration ${albums.duration}</span>
      </div>
  </div>`
 
      const appendHero = document.querySelector('.playlist-content');
      appendHero.innerHTML += newHero;
-     
-     let c = 0;
 
-    replace.forEach(song =>{
-      c++
-      const songs = document.querySelector('.style')
-      const row = document.createElement('div');
-      row.classList.add('row', 'mb-3','brano', 'py-2');
 
-      row.innerHTML = `<div class="song-title ">
-      <div class="text-white"> 
-          <p >1</p>
-      </div>
-      <div class="song-image">
-          <img src="./assets/img/iconssvg/song-cover.jpeg" alt="">
-      </div>
-      <div class="song-name-album">
-          <div class="song-name">Young as the Morning old as the Sea</div>
-          <div class="song-artist">Passenger</div>
-      </div>
-      <p class="song-album">Young as the Morning old as the Sea</p>
-      <p class="song-date-added">May 31, 2022</p>
-      <p class="song-duration">
-          3:26
-      </p>
-  </div>`
-        songs.appendChild(row);
-    })
 
-  }
- catch(err){
-   console.error('manca troppa roba')
+    let c = 0;
+    const albumList = replace.tracks.data;
+    console.log(albumList)
+    for(let i = 0; i < 9; i++){
+      c++;
+      let newList = ` <div class="song-title row align-content-center">
+      <div class="d-flex gap-2 justify-content-between">
+      <div class=" d-flex gap-2 mx-2 my-2">
+          <p class="gray-filtered">${c}</p>
+          <img src="${albums.cover_small}" alt="" >
+          <div class="song-image gray-filtered">
+              <span>${albumList[i].artist.name}</span>
+              <p class="gray-filtered" style="font-size: .6em; font-weight: 700;">${albumList[i].title_short}</p> 
+          </div>
+      </div>
+      <div class="gray-filtered">
+      <span>${albumList[i].rank}</span>
+      </div>
+      <div class="gray-filtered">
+          ${albumList[i].type}
+      </div>
+      <div class="gray-filtered d-flex justify-content-center mx-4">
+          <p>${albumList[i].duration}</p>
+      </div>
+    </div>
+    </div>`
+      const completa = document.querySelector('.listaSongs')
+      completa.innerHTML += newList;
+
+    }
  }
+ catch(err){
+  console.error(err)
  }
 }
+album();
+
  
 
 
 
 
-/*if(referenceId){
-  async function albumSongs(){
-  try{
-    const res = await fetch(albumId + referenceId,)
-    if(!res.ok){
-      throw new Error('nnammo')
-    }
-    const data = await res.json()
-    const album = data.data;
-    for(let i = 0; i < album.length; i++){
-      let newTable = `  <div class="song-title">
-      <div class="text-white"> 
-          <p >1</p>
-      </div>
-      <div class="song-image">
-          <img src="./assets/img/iconssvg/song-cover.jpeg" alt="">
-      </div>
-      <div class="song-name-album">
-          <div class="song-name">Young as the Morning old as the Sea</div>
-          <div class="song-artist">Passenger</div>
-      </div>
-      <p class="song-album">Young as the Morning old as the Sea</p>
-      <p class="song-date-added">May 31, 2022</p>
-      <p class="song-duration">
-          3:26
-      </p>
-  </div>`
-  const listaCorrelati = document.querySelector('.style')
-  listaCorrelati.innerHTML += newTable;
-    }
-  }
-  catch(err){
-    console.error('miao')
-  }
-}
-albumSongs();
-}*/
+
+
+
 
 
 

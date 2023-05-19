@@ -16,30 +16,26 @@
   <div class="container-fluid d-flex p-0 ">
     <div class="left">
       <div class="menu">
+       
         <ul>
-          <li>
-            <img src="./assets/img/iconssvg/ThreeDots.svg" alt="" style="width: 2em;">
-            <span></span>
-            </a>
+          <li id="personalized-icons">
+              <i><img src="./assets/img/iconssvg/ThreeDots.svg" alt="" style="width: 2em;"></i>
+              <span></span>
+              </a>
           </li>
-          <li>
-            <a href="#">
-              <img src="./assets/img/iconssvg/Home.svg" alt="" class="gray-filtered">
+          <li id="personalized-icons" class="gray-filtered gap-3">
+              <i><img src="./assets/img/iconssvg/Home.svg" alt="" style="width: 2em;"></i>
               <span>Home</span>
-            </a>
           </li>
-          <li>
-            <a href="#">
-              <img src="./assets/img/iconssvg/Search.svg" alt="" class="gray-filtered">
+          <li id="personalized-icons" class="gray-filtered gap-3">
+              <i><img src="./assets/img/iconssvg/Search.svg" alt="" style="width: 2em;"></i>
               <span>Cerca</span>
-            </a>
           </li>
-          <li>
-            <a href="#">
-              <img src="./assets/img/iconssvg/YourLibrary.svg" alt="" class="gray-filtered">
+          <li id="personalized-icons" class="gray-filtered gap-3">
+              <i><img src="./assets/img/iconssvg/YourLibrary.svg" alt="" style="width: 2em;"></i>
               <span>La tua libreria</span>
-            </a>
           </li>
+          
           <div style="height:30px"></div>
           <li id="personalized-icons">
             <i class="bi bi-plus"></i>
@@ -68,10 +64,15 @@
         <ul id="playListLeft" class="text-white"></ul>
       </div>
     </div>
+
+    <!--CENTRO-->
     <div class="right p-0 col-md-8">
       <div class="playlist-header ">
-        <div class="p-1 m-0 d-flex justify-content-between align-items-center" id="navbar">
-          <div class="d-flex align-items-center my-2 justify-content-between ">
+
+        <!--NAVBAR-->
+        <div id="navHero-sticky">
+          <div class="px-1 my-3 d-flex justify-content-between align-items-center" id="navbar">
+
             <div class="niceArrows d-flex">
               <div class="arrows">
                 <button>
@@ -96,57 +97,114 @@
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
               </ul>
             </div>
+          </div>
+          <!--SECTION CENTRALE-->
+          <section class="px-3 " id="hero-section">
+          </section>
 
-          </div>
         </div>
-        <!--SECTION CENTRALE-->
-        <section class="px-3 " id="hero-section">
-        </section>
-        <div class="playlist-songs-container row">
-          <!--CONTAINER BUONASERA-->
-          <div class="p-0">
+
+        <!--CONTAINER BUONASERA-->
+        <div class="px-3" id="container-centrale">
+          <div>
+            <p style="color: white; font-weight: 700; font-size: 1.8em;">Buonasera</p>
+          </div>
+          <!--CONTENITORE CARD-->
+          <div class="d-flex flex-wrap justify-content-between align-content-center gap-4 col-md-12 mb-3"
+            style="color: white; font-weight: 700;" id="contenitore-buonasera">
+          </div>
+          <div class="">
             <div>
-              <p style="color: white; font-weight: 700; font-size: 1.8em;">Buonasera</p>
+              <p style="color: white; font-weight: 700; font-size: 1.3em;">Altro di ciò che ti piace</p>
             </div>
-            <!--CONTENITORE CARD-->
-            <div class="d-flex flex-wrap justify-content-between align-content-center gap-4 col-md-12 mb-3"
-              style="color: white; font-weight: 700;" id="contenitore-buonasera">
-            </div>
-            <div class="">
-              <div>
-                <p style="color: white; font-weight: 700; font-size: 1.8em;">Altro di ciò che ti piace</p>
-              </div>
-              <!--CONTENITORE CARD ALTRO DI CIò RIGA1-->
-              <div>
-                <div id="cards-artist-description" class="d-flex flex-wrap container-fluid gap-4 scroll-card p-0">
-                </div>
+            <!--CONTENITORE CARD ALTRO DI CIò RIGA1-->
+            <div id="others">
+              <div id="cards-artist-description"
+                class="d-flex flex-wrap justify-content-between container-fluid scroll-card p-0">
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </div>
-    <div class="sideBar text-light ">
+    <div class="sideBar text-light">
+
+      <div class="d-flex justify-content-between">
       <p>Attivita amici</p>
-      <div class="d-flex align-items-start gap-2">
+      <div>
+        <i class="bi bi-person-add"></i>
+        <i class="ms-1 bi bi-x-lg"></i>
+      </div>
+    </div>
+
+      <div class="d-flex align-items-start gap-2 mb-3" id="contenuto-sidebar-destra">
         <div>
           <img src="./assets/img/search/image-1.jpeg" alt="" style="width: 2em;" class="me-2 rounded-circle">
         </div>
         <div class="p text-secondary d-flex flex-column">
-          
+
           <div class="d-flex text-secondary ">
             <p>Charlie hookham</p>
-            <div >
+            <div>
               <p>4 ore</p>
             </div>
           </div>
-          <p >in Camera Yumi Zouma</p>
-          <div >
+          <p>in Camera Yumi Zouma</p>
+          <div>
             <i class="bi bi-disc"></i>
             <span>EP lll</span>
           </div>
         </div>
+        <div>
+          <p>4 ore</p>
+        </div>
       </div>
+
+      <div class="d-flex align-items-start gap-2 mb-3" id="contenuto-sidebar-destra">
+        <div>
+          <img src="./assets/img/search/image-1.jpeg" alt="" style="width: 2em;" class="me-2 rounded-circle">
+        </div>
+        <div class="p text-secondary d-flex flex-column">
+
+          <div class="d-flex text-secondary ">
+            <p>Charlie hookham</p>
+            <div>
+              <p>4 ore</p>
+            </div>
+          </div>
+          <p>in Camera Yumi Zouma</p>
+          <div>
+            <i class="bi bi-disc"></i>
+            <span>EP lll</span>
+          </div>
+        </div>
+        <div>
+          <p>4 ore</p>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-start gap-2 mb-3" id="contenuto-sidebar-destra">
+        <div>
+          <img src="./assets/img/search/image-1.jpeg" alt="" style="width: 2em;" class="me-2 rounded-circle">
+        </div>
+        <div class="p text-secondary d-flex flex-column">
+
+          <div class="d-flex text-secondary ">
+            <p>Charlie hookham</p>
+      
+          </div>
+          <p>in Camera Yumi Zouma</p>
+          <div>
+            <i class="bi bi-disc"></i>
+            <span>EP lll</span>
+          </div>
+        </div>
+        <div>
+          <p>4 ore</p>
+        </div>
+      </div>
+
     </div>
   </div>
   <footer class="fixed-bottom">

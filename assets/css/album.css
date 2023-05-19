@@ -1,4 +1,5 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Flow+Circular&display=swap');
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -130,8 +131,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica,
-    Arial, sans-serif;
+  font-family: 'Flow Circular', cursive;
 }
 
 .left {
@@ -153,7 +153,7 @@ body {
   align-items: center;
 }
 #play-list-populated ul {
-  height: 320px;
+  height: 600px;
   width: 50vh;
   overflow: hidden;
   overflow-y: scroll;
