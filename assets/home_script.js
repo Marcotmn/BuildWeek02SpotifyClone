@@ -134,12 +134,12 @@ async function populateOtherCards() {
       console.log(home[i]);
       otherBanner.innerHTML += `
       <div id="othercards" class="card rounded-3" style="width: 15em;">
-      <a href="/artist_page.html.html?idAlbum=${home[i].artist.id}"><img src="${home[i].artist.cover_big}" class="card-img-top img-fluid rounded-1 mb-2" alt="..."></a>
+      <a href="/artist_page.html?idAlbum=${home[i].artist.id}"><img src="${home[i].artist.picture_small}" class="card-img-top img-fluid rounded-1 mb-2" alt="..."></a>
       <div class="card-body p-0">
-      <a href="/artist_page.html.html?idAlbum=${home[i].artist.id}">${home[i].artist.title}</a>
+      <a href="/artist_page.html?idAlbum=${home[i].artist.id}">${home[i].artist.name}</a>
         
         <div>
-        <a href="/artist_page.html?idAlbum=${home[i].artist.name}"></a>
+        <a href="/artist_page.html?idAlbum=${home[i].artist.id}"><p>${home[i].title}</p></a>
         </div>
         <div>
         </div>
