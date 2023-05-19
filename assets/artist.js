@@ -33,17 +33,14 @@ const playlistNames = [
   "ma(ncanza) che cazzo ne so io (gen-feb 2021)",
 ]
 
-// SIDEBAR -DX
-
-/*  window.onload = () => {
+// SIDEBAR -sx
   const playlistUl = document.getElementById("chill-vibes");
-
   playlistNames.forEach(playlistName => {
     const li = document.createElement("li");
     li.innerText = playlistName;
     playlistUl.appendChild(li);
   });
-};
+
 
 
 function toggleFollow() {
@@ -54,27 +51,68 @@ function toggleFollow() {
       followButton.innerText = 'Following';
   }
 }
-*/
+
 const fetchArtist = 'https://striveschool-api.herokuapp.com/api/deezer/artist/'
 const albumId = new URLSearchParams(location.search);
 const referenceId = albumId.get("idAlbum") 
 
 
 
-async function popolate() {
+  async function popolate() {
 try {
-const artist = await fetch(fetchArtist + "401")
+const artist = await fetch(fetchArtist + referenceId);
 if(!artist.ok){
   throw new Error ('L\'album selezionato non è stato trovato')
 }
 const response = await artist.json()
 console.log(response)
 const artistPage = response;
+const banner = `
+           <div id="image-copertina">
+<img src="${response.picture_xl}" class="card-img-top img-fluid rounded-1 mb-2" alt="..." >
+</div>
+           <div class="container-banner"> 
+            <div class="px-2 py-3">
+              <div class="d-flex flex-column m-3">
+                <div>
+                  <div class="m-0 mt-3">
+                    <img id="artistImage"
+                      style="width: 3em"
+                      src="${response.picture_small}"
+                    />
+                    <span class="text-light"><i class="bi bi-patch-check-fill text-primary"></i> Artista verificato </span>
+                  </div>
+                  <p
+                    class="m-0"
+                    id="artist"
+                    style="color: white; font-weight: 700; font-size: 4rem"
+                  >
+                    ${response.name}
+                  </p>
+                  <p
+                    class="m-0"
+                    id="ascoltatori"
+                    style="color: white; font-weight: 600; font-size: 15px"
+                  >
+                    20.701.822 ascoltatori mensili
+                  </p>
+                </div>
+              </div>
+          </div>
+          </div>`
+            const plays = document.querySelector('#heroSection');
+            plays.innerHTML = banner;
 
-
-
-const plays = document.querySelector('.right');
-plays.innerHTML = banner;
+            /*let c = 0;
+            const albumList = replace.tracks.data;
+            console.log(albumList)
+            for(let i = 0; i < 9; i++){
+              c++;
+              let newList = ``
+              const completa = document.querySelector('.listaCarte')
+              completa.innerHTML += newList;
+        
+            }*/
 
 
 }
@@ -82,5 +120,14 @@ catch (err) {
 console.error(err)
 }}
 popolate();
+
+
+
+
+
+
+
+
+
 
 
