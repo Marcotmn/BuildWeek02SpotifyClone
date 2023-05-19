@@ -457,41 +457,6 @@ body {
   margin-top: 20px;
 }
 
-.playlist-songs table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.playlist-songs table tr td,
-.playlist-songs table tr th {
-  padding: 10px;
-  color: #cacaca;
-}
-
-.playlist-songs table tr th {
-  font-weight: 600;
-  font-size: 14px;
-  text-transform: uppercase;
-  font-weight: 200;
-  letter-spacing: 2px;
-}
-
-.playlist-songs table tr:first-of-type {
-  border-bottom: 1px solid #cacaca;
-}
-
-.playlist-songs table th {
-  text-align: left;
-}
-
-.playlist-songs table tr th:first-child {
-  width: 2%;
-}
-
-.playlist-songs table tr th:nth-child(2) {
-  width: 40%;
-}
-
 .song-image img {
   width: 34px;
   height: 34px;
@@ -642,4 +607,8 @@ body {
 }
 #footer-player-left-song-img img {
   width: 4em;
+}
+.style li {
+  color: white;
+  text-decoration: dashed;
 }

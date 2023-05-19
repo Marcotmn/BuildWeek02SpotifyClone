@@ -48,41 +48,125 @@ const playlistNames = [
 lista.appendChild(newList)
 })
  } 
- playlist();
-
-
-//FUNCTIOON HOME CON RILEVANZA ID PARAMETRO PER PAG 2
-
- //creare function per randomizzare le card da mandare a schermo da fare alla fine
-
-//fetch per albumid, una volta fecciata mandare a schermo ( fare test in serata)/
+playlist();
+album();
+if(referenceId){
  async function album (){
   try{
     const res = await fetch(fetcAlbumId + referenceId, )//esempio di id, corrispondente, la async funziona
     if(!res.ok){
-      throw new Error ('aia')
+      throw new Error ('L\'album selezionato non è stato trovato')
     }
     const replace = await res.json()
-    const albums = replace;
-    console.log(albums)
-    const albumPreview = document.querySelector('#cose')
-    for(let i = 0; i < albums.length; i++){
-      console.log(albums)
-      albumPreview.innerHTML += ``
-      
+    const albums = replace.data;
+    console.log(albums);
+     let newHero = `<div class="playlist-cover">
+     <img src="./assets/img/iconssvg/playlist-cover.png" alt="">
+ </div>
+ <div class="playlist-info">
+     <div class="playlist-public"> PUBLIC PLAYLIST</div>
+     <div class="playlist-title">Classic Road Trip Songs</div>
+     <div class="playlist-description">A soundtrack to fuel your good mood while on the road.
+     </div>
+     <div style="height: 10px;"></div>
+     <div class="playlist-stats">
+         <img src="./assets/img/iconssvg/spotify-logo.png" width="24px" height="24px" alt="">
+         <span> Spotify ·</span>
+         <span>5,131,321 likes · </span>
+         <span>100 songs, </span>
+         <span>6 hr 57 min </span>
+     </div>
+ </div>`
 
-    }
+     const appendHero = document.querySelector('.playlist-content');
+     appendHero.innerHTML += newHero;
+     
+     let c = 0;
+
+    replace.forEach(song =>{
+      c++
+      const songs = document.querySelector('.style')
+      const row = document.createElement('div');
+      row.classList.add('row', 'mb-3','brano', 'py-2');
+
+      row.innerHTML = `<div class="song-title ">
+      <div class="text-white"> 
+          <p >1</p>
+      </div>
+      <div class="song-image">
+          <img src="./assets/img/iconssvg/song-cover.jpeg" alt="">
+      </div>
+      <div class="song-name-album">
+          <div class="song-name">Young as the Morning old as the Sea</div>
+          <div class="song-artist">Passenger</div>
+      </div>
+      <p class="song-album">Young as the Morning old as the Sea</p>
+      <p class="song-date-added">May 31, 2022</p>
+      <p class="song-duration">
+          3:26
+      </p>
+  </div>`
+        songs.appendChild(row);
+    })
+
   }
  catch(err){
    console.error('manca troppa roba')
  }
  }
- album();
+}
+ 
+
+
+
+
+/*if(referenceId){
+  async function albumSongs(){
+  try{
+    const res = await fetch(albumId + referenceId,)
+    if(!res.ok){
+      throw new Error('nnammo')
+    }
+    const data = await res.json()
+    const album = data.data;
+    for(let i = 0; i < album.length; i++){
+      let newTable = `  <div class="song-title">
+      <div class="text-white"> 
+          <p >1</p>
+      </div>
+      <div class="song-image">
+          <img src="./assets/img/iconssvg/song-cover.jpeg" alt="">
+      </div>
+      <div class="song-name-album">
+          <div class="song-name">Young as the Morning old as the Sea</div>
+          <div class="song-artist">Passenger</div>
+      </div>
+      <p class="song-album">Young as the Morning old as the Sea</p>
+      <p class="song-date-added">May 31, 2022</p>
+      <p class="song-duration">
+          3:26
+      </p>
+  </div>`
+  const listaCorrelati = document.querySelector('.style')
+  listaCorrelati.innerHTML += newTable;
+    }
+  }
+  catch(err){
+    console.error('miao')
+  }
+}
+albumSongs();
+}*/
+
+
+
+
+
 //function per pag 2 inserimento elementi nel container 
 
 
 //fetch pag artist con rilevamento tramide id 
- async function artist (){
+/* async function artist (){
   try{
     const res = await fetch(fetchArtist+ referenceId)//esempio di id, corrispondente, la async funziona
     if(!res.ok){
@@ -101,8 +185,8 @@ lista.appendChild(newList)
   catch(err){
     console.error('miao')
   }
- }
-artist();
+ }*/
+
 
 //creare le costanti in ogni script. richiamare il searchParms
 //creare una variabile numerica che si incrementa ogni volta che viene iniziallizzata una pagina con una lista di contenuti mandati a schermo

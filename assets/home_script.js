@@ -82,7 +82,7 @@ async function populateHero() {
 populateHero();
 
 const apiHomeEvening =
-  "https://striveschool-api.herokuapp.com/api/deezer/search?q={query}";
+  "https://striveschool-api.herokuapp.com/api/deezer/search?q=album";
 
 async function populateGoodEvening() {
   try {
@@ -118,7 +118,7 @@ async function populateGoodEvening() {
 populateGoodEvening();
 
 const apiOther =
-  "https://striveschool-api.herokuapp.com/api/deezer/search?q={query}";
+  "https://striveschool-api.herokuapp.com/api/deezer/search?q=get";
 
 async function populateOtherCards() {
   try {
@@ -134,12 +134,12 @@ async function populateOtherCards() {
       console.log(home[i]);
       otherBanner.innerHTML += `
       <div id="othercards" class="card rounded-3" style="width: 15em;">
-      <a href="/artist_page.html.html?idAlbum=${home[i].artist.id}"><img src="${home[i].artist.cover_big}" class="card-img-top img-fluid rounded-1 mb-2" alt="..."></a>
+      <a href="/artist_page.html?idAlbum=${home[i].artist.id}"><img src="${home[i].artist.picture}" class="card-img-top img-fluid object-fit: fit;rounded-1 mb-2" alt="..."></a>
       <div class="card-body p-0">
-      <a href="/artist_page.html.html?idAlbum=${home[i].artist.id}">${home[i].artist.title}</a>
+      <a href="/artist_page.html?idAlbum=${home[i].artist.id}">${home[i].title}</a>
         
         <div>
-        <a href="/artist_page.html?idAlbum=${home[i].artist.name}"></a>
+        <a href="/artist_page.html?idAlbum=${home[i].artist.id}">${home[i].artist.name}</a>
         </div>
         <div>
         </div>
